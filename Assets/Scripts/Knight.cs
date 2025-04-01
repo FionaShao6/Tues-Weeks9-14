@@ -41,7 +41,6 @@ public class Knight : MonoBehaviour
     {
         Debug.Log("The attack just finished");
         canRun = true;
-
     }
 
     
@@ -54,4 +53,4 @@ public class Knight : MonoBehaviour
         }
     }
 }
-
+  
