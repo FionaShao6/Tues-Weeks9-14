@@ -41,11 +41,10 @@ public class Knight : MonoBehaviour
     {
         Debug.Log("The attack just finished");
         canRun = true;
-
     }
 
     
-
+      
     public void PlayFootstep()
     {
         if (footstepSounds != null) 
@@ -54,4 +53,4 @@ public class Knight : MonoBehaviour
         }
     }
 }
-
+  
