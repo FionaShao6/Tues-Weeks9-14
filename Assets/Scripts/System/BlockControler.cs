@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class BlockControler : MonoBehaviour
 {
-    public static BlockControler Instance;
+    //public static BlockControler Instance;
+    public GameManager gameManager;
+    public BlockControler blockControler;
     public GameObject blockPrefab; // prefab
     public Transform gridParent;   // 
     public float delta = 0.3f;
     public Color baseColor;
     public Color targetColor;
 
-    void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
+    //void Awake()
+    //{
+    //    if (Instance == null)
+    //    {
+    //        Instance = this;
            
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    //    }
+    //    else
+    //    {
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     void Start()
     {
@@ -47,7 +49,18 @@ public class BlockControler : MonoBehaviour
         }
         GenerateGrid(16, 1);
     }
-
+    public void DisableAllButtons()
+    {
+        for (int i = 0; i < gridParent.childCount; i++)
+        {
+            Transform child = gridParent.GetChild(i);
+            Button button = child.GetComponent<Button>();
+            if (button != null)
+            {
+                button.interactable = false;
+            }
+        }
+    }
     void GenerateGrid(int totalBlocks, int targetCount)
     {
        
