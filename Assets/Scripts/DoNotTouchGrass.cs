@@ -12,7 +12,7 @@ public class DoNotTouchGrass : MonoBehaviour
     public Tile flower;
     float speed = 5f;
     bool isMoving = false;
-    int time = 0;
+    //int time = 0;
     Vector3 targetPosition;
     void Start()
     {
