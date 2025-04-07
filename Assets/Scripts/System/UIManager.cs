@@ -5,18 +5,20 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.SocialPlatforms.Impl;
+using Unity.VisualScripting;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager Instance;
+    public static UIManager Instance;//https://medium.com/%40Code_With_K/understanding-the-singleton-pattern-in-c-and-unity-f5abd1ab80bb
 
     public TMP_Text timerText;
     public TMP_Text scoreText;
     public TMP_Text comboText;
-    public GameObject gameOverPanel;
     public TMP_Text finalScoreText;
-    public GameObject restartButton;
 
+    public GameObject restartButton;
+    public GameObject gameOverPanel;
+    public GameManager gameManager;
 
     void Awake()
     {
@@ -31,18 +33,18 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void UpdateTimer(float time)
+    public void UpdateTimer(float time)// Update the timer UI
     {
         if (timerText != null)
         {
-            timerText.text = "Time: " + (int)Mathf.Ceil(time) + "s";
+            timerText.text = "Time: " + (int)Mathf.Ceil(time) + "s";//Display remaining time
         }
         
         
     }
     void Start()
     {
-        // Hide the game over panel and restart button
+        // Hide the game over panel, restart button and final score.
         gameOverPanel.SetActive(false);
         restartButton.SetActive(false);
         finalScoreText.gameObject.SetActive(false);
@@ -50,9 +52,12 @@ public class UIManager : MonoBehaviour
 
     }
 
+
+
+
     public void UpdateScore(int score)
     {
-
+        //Logic of score increase
         if (scoreText != null)
             scoreText.text = "Score: " + score;
     }
@@ -60,27 +65,31 @@ public class UIManager : MonoBehaviour
     public void UpdateCombo(int combo)
     {
         if (comboText != null)
-            comboText.text = "+" + combo;
+            comboText.text = "+" + combo;// Update the combo count display
     }
 
-   
 
+    // Display the game over panel
     public void ShowGameOver()
-    {
+    {//Display the game over panel, restart button and final score.
         gameOverPanel.SetActive(true);
         restartButton.SetActive(true);  
         finalScoreText.gameObject.SetActive(true);
         finalScoreText.text = "Final Score: " + (GameManager.Instance.Score+GameManager.Instance.Combo);
     }
+    
     public void OnRestartButtonClicked()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
+        // Clean UI
         gameOverPanel.SetActive(false);
         restartButton.SetActive(false);
         finalScoreText.gameObject.SetActive(false);
-        
+
+        //Score reset to zero
         UpdateScore(0);
         UpdateCombo(0);
+        // Notify GameManager to restart the game
+        gameManager.RestartGame();
+
     }
 }
