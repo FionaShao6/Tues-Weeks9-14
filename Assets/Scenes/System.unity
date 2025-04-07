@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7723128cdd7c42842a7f89193af9588c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  blockControler: {fileID: 0}
+  gameManager: {fileID: 1709960842}
+  blockControler: {fileID: 165044361}
   blockPrefab: {fileID: 7697421040194332712, guid: 915d0177d57a516418f7f6db3be4e696, type: 3}
   gridParent: {fileID: 165044360}
   delta: 0.3
@@ -939,9 +939,10 @@ MonoBehaviour:
   timerText: {fileID: 515820641}
   scoreText: {fileID: 1611986248}
   comboText: {fileID: 1709228057}
-  gameOverPanel: {fileID: 764404740}
   finalScoreText: {fileID: 550346976}
   restartButton: {fileID: 1904594242}
+  gameOverPanel: {fileID: 764404740}
+  gameManager: {fileID: 1709960842}
 --- !u!1 &985869675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,50 +1006,6 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1376405053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1376405055}
-  - component: {fileID: 1376405054}
-  m_Layer: 0
-  m_Name: Onclick
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1376405054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376405053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f17b28822334124aa0f0f187fdc53db, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1376405055
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1376405053}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 240.32439, y: 442.8779, z: -7.6205225}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1332,7 +1289,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1709960841}
   - component: {fileID: 1709960842}
-  - component: {fileID: 1709960843}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1413,39 +1369,12 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   blockControler: {fileID: 165044361}
+  uiManager: {fileID: 943675927}
+  BlockControler: {fileID: 165044361}
   Score: 0
   Combo: 0
   TimeLeft: 0
   currentLevel: 1
---- !u!114 &1709960843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709960840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates:
-  - eventID: 4
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: 
-          m_MethodName: 
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
 --- !u!1 &1771177414
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,4 +1638,3 @@ SceneRoots:
   - {fileID: 943675926}
   - {fileID: 1709960841}
   - {fileID: 985869678}
-  - {fileID: 1376405055}
