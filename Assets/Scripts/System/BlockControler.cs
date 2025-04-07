@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class BlockControler : MonoBehaviour
 {
-    //public static BlockControler Instance;
+    
     public GameManager gameManager;
     public BlockControler blockControler;
     public GameObject blockPrefab; // prefab
@@ -67,12 +67,7 @@ public class BlockControler : MonoBehaviour
         // Randomly generate basic colors
         baseColor = Random.ColorHSV(0, 1, 0.4f, 0.8f, 0.8f, 1);
         // The target block color is slightly different from the base color
-        targetColor = new Color(
-            Mathf.Clamp01(baseColor.r + delta),
-            Mathf.Clamp01(baseColor.g + delta),
-            Mathf.Clamp01(baseColor.b + delta),
-            baseColor.a
-        );
+        targetColor = new Color(baseColor.r + delta, baseColor.g+ delta, baseColor.b+ delta);
         //
         int targetIndex = Random.Range(0, totalBlocks);
 
